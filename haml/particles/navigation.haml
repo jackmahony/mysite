@@ -1,0 +1,28 @@
+-# Main Navigation
+%nav#topnav
+  .row{data-equalizer: "topnav"}
+    .small-6.medium-4.columns{data-equalizer-watch: "topnav"}
+      .logo
+        %a{href: "{{site.url}}"}
+          %img{src: "{{site.theme.link}}/assets/img/logo-jm2.svg"}
+
+    .medium-4.columns.show-for-medium{data-equalizer-watch: "topnav"}
+      %ul.menu.text-right
+        {% for item in topnav.get_items %}
+          %li{class: "{{item.classes | join(' ')}}"}
+            %a{href: "{{item.link}}"}
+              {{item.title}}
+        {% endfor %}
+    .small-6.large-4.columns{data-equalizer-watch: "topnav"}
+      .social.show-for-large
+        .linkedin
+          %a{href: "https://au.linkedin.com/in/jack-mahony-2aa9ba66"}
+            %img{src: "{{theme.link}}/assets/img/linkedin-logo.svg"}
+        .github
+          %a{href: "https://dribbble.com/session/new"}
+            %img{src: "{{theme.link}}/assets/img/dribble-logo.svg"}
+
+        -# Hamburger
+      .text-right.hide-for-medium
+        %a#hamburger.hide-for-medium
+          <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"><g> <path data-color="color-2" fill="#ffffff" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path> <path fill="#ffffff" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path> <path fill="#ffffff" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path> </g></svg>

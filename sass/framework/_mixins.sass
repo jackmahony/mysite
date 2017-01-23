@@ -1,0 +1,35 @@
+=middle
+  position: relative
+  top: 50%
+  +transform(translateY(-50%))
+
+  &::before
+    transform-style: preserve-3d
+
++breakpoint(small)
+  .small-middle
+    +middle
+
++breakpoint(medium)
+  .medium-middle
+    +middle
+
++breakpoint(large)
+  .large-middle
+    +middle
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=animation ($stuff)
+  -webkit-animation: $stuff
+  -moz-animation: $stuff
+  -ms-animation: $stuff
+  animation: $stuff

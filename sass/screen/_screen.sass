@@ -1,0 +1,22 @@
+html, body
+  -webkit-font-smoothing: antialiased
+  position: relative
+
+// Makes WOW.JS behave
+.wow
+  visibility: hidden
+
+// Sections
+section, footer
+  padding: 3rem 0
+  position: relative
+  overflow: hidden
+
+  +breakpoint(medium)
+    padding: 4rem 0
+
+  +breakpoint(xlarge)
+    padding: 5rem 0
+
+  +breakpoint(xxlarge)
+    padding: calc(5rem + 3vw) 0

@@ -1,0 +1,27 @@
+.button
+  font-size: rem-calc(20)
+
+  &.round
+    +border-radius(1000px)
+
+  &.long
+    padding: 0.85em 3em
+
+  &.blue
+    background-color: $blue
+
+    &:hover
+      background-color: darken($blue, 5%)
+
+  &.radius
+    +border-radius(4px)
+
+  .hollow
+    border-width: 2px
+
+  &.white
+    &.hollow
+      border-color: white
+
+      &:hover
+        background-color: white

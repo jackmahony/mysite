@@ -1,0 +1,25 @@
+{
+  "name": "bower",
+  "authors": [
+    "Jeremy Butler <jeremy@madewithply.com>"
+  ],
+  "description": "Bower Requirements",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.1",
+    "starter-theme": "https://github.com/timber/starter-theme.git",
+    "animate.css": "^3.5.1",
+    "wow": "wowjs#^1.1.2",
+    "jointswp": "https://github.com/JeremyEnglert/JointsWP.git"
+  },
+  "private": true
+}

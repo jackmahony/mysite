@@ -1,0 +1,82 @@
+!!!
+%html
+
+  %head
+
+    -# [if lt IE 7] <html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" >
+    -# [if IE 7] <html class="no-js ie ie7 lt-ie9 lt-ie8" >
+    -# [if IE 8] <html class="no-js ie ie8 lt-ie9" >
+    -# [if gt IE 8]><!
+    -# <![endif]>
+
+    %meta{charset: "{{site.charset}}"}
+    %title
+      {% if wp_title %}
+      {{ wp_title }} - {{ site.name }}
+      {% else %}
+      {{ site.name }}
+      {% endif %}
+
+    %meta{content: "{{ site.name }}", name: "description"}
+    %meta{content: "text/html; charset=UTF-8", http-equiv: "Content-Type"}
+    %meta{content: "IE=edge,chrome=1", http-equiv: "X-UA-Compatible"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %link{href: "", rel: "pingback"}
+
+    {{function('wp_head')}}
+
+    -# Head Block
+    {% block head %}
+    {% endblock %}
+
+    -# CSS
+    %link{href: "{{theme.link}}/assets/stylesheets/core.css", media: "screen", rel: "stylesheet", type: "text/css"}
+    %link{href: "{{theme.link}}/bower_components/animate.css", media: "screen", rel: "stylesheet", type: "text/css"}
+    %link{href: "{{theme.link}}/bower_components/hover-master/css/hover.css", media: "screen", rel: "stylesheet", type: "text/css"}
+
+
+  %body{class: "{{body_class}}", data-template: "base.twig"}
+
+    -# Navigation Mobile
+    {% include 'particles/navigation-mobile.twig' %}
+
+
+    -# Page Header
+    %section#page-header.fadeInDown.animated
+      {% include 'particles/navigation.twig' %}
+
+      -# Page Content
+    {% block content %}
+      sorry no content
+    {% endblock %}
+
+    -# Page Footer
+    {% block footer %}
+        %section#page-footer
+          %nav#footernav
+            .row
+              .medium12.columns
+                %span
+                  %a{href: "{{site.url}}"}
+                    © Jack Mahony {{post|date('Y')}}
+                %span.pipe |
+                %a{href: "{{site.url}}"}
+                  %img{src: "{{theme.link}}/assets/img/logo-jm1.svg"}
+    {% endblock %}
+
+      -# Scripts
+      %scripts
+        -# Foundation
+        %script{src: "{{theme.link}}/bower_components/foundation-sites/dist/foundation.min.js"}
+        :javascript
+          $(document).foundation();
+
+        -# Wowjs
+        %script{src: "{{theme.link}}/bower_components/wow/dist/wow.min.js"}
+        :javascript
+          new WOW().init();
+
+
+        {% block script %}
+
+        {% endblock %}

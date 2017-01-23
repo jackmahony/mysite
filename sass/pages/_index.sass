@@ -1,0 +1,273 @@
+body
+  margin: 0
+  padding: 0
+  
+  p
+    color: #373737
+
+  h3
+    color: $black
+
+  h2
+    +breakpoint(small-only)
+      margin-bottom: rem-calc(13.5)
+
+section#page-header
+  position: relative
+  background-color: $black
+  padding-top: rem-calc(20)
+  padding-bottom: rem-calc(20)
+  margin-top: 0
+
+  // Portrait Section -------------------------------------------------------
+section#portrait
+  margin-top: 0
+  z-index: 10
+  position: relative
+  box-shadow: 0px 3px 2px #afafaf
+  background-color: $blue
+  animation-delay: 0.6s
+  padding-top: rem-calc(40)
+
+  h2
+    margin-bottom: 10px
+  .designer
+    margin-bottom: 35px
+
+  +breakpoint(medium)
+    padding-top: rem-calc(90)
+    padding-bottom: rem-calc(250)
+
+    .designer
+      h2,p
+        animation-delay: 1.3s
+
+    .coder
+      h2,p
+        animation-delay: 1.5s
+
+  +breakpoint(small only)
+    background-image: none! important
+
+// About Page ----------------------------------------------------------------
+section#aboutme
+  z-index: 1
+  box-shadow: 0px 3px 2px #afafaf
+
+  .about-title
+    margin-left: rem-calc(30)
+
+  h2
+    margin-top: rem-calc(30)
+
+
+  +breakpoint(medium)
+    padding-top: rem-calc(50)
+    padding-bottom: rem-calc(70)
+
+section#aboutskills
+  background-color: #f4f4f4
+  padding-bottom: rem-calc(20)
+  padding-top: rem-calc(45)
+  animation-delay: 1s
+
+  +breakpoint(medium)
+    padding-bottom: rem-calc(50)
+
+  img
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+  h2
+    text-align: center
+    margin-bottom: rem-calc(50)
+
+  h3
+    margin-top: rem-calc(20)
+    text-align: center
+    margin-bottom: rem-calc(25)
+
+    +breakpoint(medium)
+      margin-bottom: rem-calc(8)
+
+
+
+// Temp projects
+section#tempprojects
+  padding-top: rem-calc(40)
+  padding-bottom: rem-calc(30)
+  animation-delay: 2s
+
+  h2
+    text-align: center
+    margin-bottom: rem-calc(30)
+
+  img
+    margin-bottom: rem-calc(25)
+
+  +breakpoint(medium)
+    padding-top: rem-calc(70)
+    padding-bottom: rem-calc(80)
+
+    h2
+      margin-bottom: rem-calc(40)
+
+
+// Individual Projects
+// section#projects
+//   .project-content
+//     padding-top: 10px
+//     padding-bottom: 10px
+//
+//   .project-gallery
+//     padding-top: 10px
+//     padding-bottom: 10px
+//
+//   +breakpoint(medium)
+//     padding-top: 50px
+//
+//     .project-content
+//       padding-top: 25px
+//       padding-bottom: 25px
+//
+//     .project-gallery
+//       padding-top: 25px
+//       padding-bottom: 25px
+
+//Projects Homepage ----------------------------------------------------------
+// section#latestwork
+//   position: relative
+//   display: inherit
+//   padding-top: 5rem
+//   background-color: #f4f4f4
+//   animation-delay: 1.5s
+//   text-align: left
+//
+//   +breakpoint(medium)
+//     .latest
+//       text-align: center
+//       padding-bottom: 0
+//       margin-bottom: 0
+//     h2
+//       margin-top: 20px
+//
+//   .container
+//     display: block
+//     background-color: $white
+//     padding-bottom: 20px
+//     box-shadow: 5px 5px 5px #afafaf
+//     min-height: rem-calc(350)
+//     max-height: rem-calc(350)
+//
+//   .singleproject
+//     margin-bottom: 1rem
+//     animation-delay: 2.5s
+//
+//     .thumbnail
+//       display: block
+//       margin: auto
+//       width: 100%
+//       max-height: auto
+//
+//     h3
+//       display: inline-block
+//       color: $black
+//       padding-left: 1rem
+//       padding-top: 1.5rem
+//
+//     img
+//       display: inline-block
+//       padding-left: .5rem
+//       border: none
+//
+//   +breakpoint(small-only)
+//     padding-top: 35px
+//     .container
+//       margin-top: 30px
+
+// Contact section------------------------------------------------
+section#contact-text
+  margin: 0 auto
+  box-shadow: 0px 3px 2px #afafaf
+  padding-bottom: rem-calc(40)
+  position: relative
+  z-index: 1
+  display: block
+
+  img
+    // margin-bottom: rem-calc(30)
+
+  span
+    margin-left: rem-calc(10)
+    font-size: rem-calc(18)
+  h3
+    margin-bottom: rem-calc(25)
+    margin-top: rem-calc(10)
+
+  .contact-1
+    color: #0077B5
+    margin-bottom: rem-calc(30)
+  .contact-2
+    color: $black
+
+    +breakpoint(small-only)
+      margin-bottom: rem-calc(25)
+  // .contact-3
+  //   color: #d34836
+
+  +breakpoint(medium)
+    padding-top: rem-calc(70)
+    padding-bottom: rem-calc(50)
+
+    p
+      display: inline-block
+
+    span
+      padding-left: 0
+      padding-bottom: 0
+      font-size: 20px
+      vertical-align: middle
+
+
+    img
+      padding-bottom: 0
+      margin-bottom: 0
+      vertical-align: middle
+
+section#contact-form
+  background-color: #f4f4f4
+
+  +breakpoint(medium)
+    padding: 50px
+
+  +breakpoint(small-only)
+    h3
+      margin-bottom: 20px
+
+  form
+
+    label
+      color: $black
+      margin-bottom: 1rem
+      font-size: rem-calc(20)
+      +breakpoint (medium)
+        font-size: 15px
+        color: #646464
+
+      +breakpoint(small-only)
+        font-size: 12px
+        color: #646464
+
+// Footer ------------------------------------------------------------------
+section#page-footer
+  padding: 20px
+
+  .pipe
+    padding-left: 10px
+    font-size: 20px
+    text-
+  img
+    padding-left: 10px
+  a
+    color: $white

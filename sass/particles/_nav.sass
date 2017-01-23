@@ -1,0 +1,133 @@
+nav#topnav
+  position: relative
+  top: 0
+  width: 100%
+  text-align: center
+  padding-top: 0
+
+  .social
+    display: none
+
+  .logo-jm
+    display: inline-block
+
+  ul.menu
+    display: none
+
+  +breakpoint(medium)
+    ul.menu
+      display: inline-block
+      margin-top: rem-calc(10)
+
+      a
+        color: $white
+        position: relative
+        padding: rem-calc(10)
+
+        &:after
+          content: ''
+          width: 75%
+          height: 2px
+          background-color: #00E7DC
+          position: absolute
+          bottom: 1px
+          opacity: 0
+          left: 12.5%
+          transition: 200ms all
+
+        &:hover
+          opacity: 1
+          transition: 0.7s
+          color: #00E7DC
+
+          &:after
+            transition: 1.5s
+            bottom: -5
+            opacity: 1
+
+      li.current_page_item a
+        color: #00E7DC
+
+        &::after
+          bottom: 1px
+          opacity: 1
+
+    .logo-jm
+      display: inline-block
+
+    .social
+      display: inline-block
+      margin-top: rem-calc(10)
+
+
+      .linkedin
+        display: inline-block
+        padding-right: rem-calc(20)
+        text-align: left
+
+      .github
+        display: inline-block
+        text-align: left
+
+// Mobile Styles
+
+#hamburger
+  overflow: hidden
+  display: inline-block
+  margin-top: rem-calc(15)
+  margin-right: rem-calc(50)
+
+#mobile-menu
+  background-color: $black
+  display: block
+  padding-top: 1rem
+  overflow-y: scroll
+  height: 100vh
+  width: 100vw
+  position: fixed
+  z-index: 999
+  animation-duration: 300ms
+  &.fadeOut
+    visibility: hidden
+    +transition(1000ms)
+
+  .menu
+    position: relative
+    top: 0
+
+    li
+      border-bottom: 1px solid rgba(255,255,255,0.4)
+
+      &:last-of-type
+        border-bottom-width: 0px
+
+      a
+        color: white
+        text-transform: uppercase
+        text-align: center
+        padding: 1.5rem 0
+        font-size: 22px
+
+  .accordian
+    li
+      border: none
+      border-top: 1px solid rgba(255,255,255,0.4)
+
+      a
+        font-size: 20px
+        line-height: 1.2em
+
+  #mobile-container
+    position: relative
+    height: 100%
+
+  #mobile-main
+    +middle
+    padding: 0 2rem
+
+  .close-menu
+    position: absolute
+    right: 1rem
+    z-index: 99
+    display: inline-block
+    margin-top: 6px
