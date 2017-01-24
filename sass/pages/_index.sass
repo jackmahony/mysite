@@ -1,53 +1,37 @@
 body
-  margin: 0
-  padding: 0
-  
+  margin-top: 0
+  margin-bottom: 0
+  padding-top: 0
+  padding-bottom: 0
+
   p
     color: #373737
 
   h3
     color: $black
 
-  h2
-    +breakpoint(small-only)
-      margin-bottom: rem-calc(13.5)
-
 section#page-header
   position: relative
   background-color: $black
-  padding-top: rem-calc(20)
+  padding-top: rem-calc(10)
   padding-bottom: rem-calc(20)
   margin-top: 0
 
   // Portrait Section -------------------------------------------------------
 section#portrait
-  margin-top: 0
-  z-index: 10
-  position: relative
-  box-shadow: 0px 3px 2px #afafaf
-  background-color: $blue
-  animation-delay: 0.6s
-  padding-top: rem-calc(40)
+  overflow:visible
+  padding-bottom: 400px
 
-  h2
-    margin-bottom: 10px
-  .designer
-    margin-bottom: 35px
+  svg
+    max-width: 200px
+    display: block
+    margin-left: auto
+    margin-right: auto
 
-  +breakpoint(medium)
-    padding-top: rem-calc(90)
-    padding-bottom: rem-calc(250)
-
-    .designer
-      h2,p
-        animation-delay: 1.3s
-
-    .coder
-      h2,p
-        animation-delay: 1.5s
-
-  +breakpoint(small only)
-    background-image: none! important
+  h1
+    display: block
+    text-align: center
+    color: $white
 
 // About Page ----------------------------------------------------------------
 section#aboutme
@@ -91,100 +75,8 @@ section#aboutskills
     +breakpoint(medium)
       margin-bottom: rem-calc(8)
 
-
-
 // Temp projects
 section#tempprojects
-  padding-top: rem-calc(40)
-  padding-bottom: rem-calc(30)
-  animation-delay: 2s
-
-  h2
-    text-align: center
-    margin-bottom: rem-calc(30)
-
-  img
-    margin-bottom: rem-calc(25)
-
-  +breakpoint(medium)
-    padding-top: rem-calc(70)
-    padding-bottom: rem-calc(80)
-
-    h2
-      margin-bottom: rem-calc(40)
-
-
-// Individual Projects
-// section#projects
-//   .project-content
-//     padding-top: 10px
-//     padding-bottom: 10px
-//
-//   .project-gallery
-//     padding-top: 10px
-//     padding-bottom: 10px
-//
-//   +breakpoint(medium)
-//     padding-top: 50px
-//
-//     .project-content
-//       padding-top: 25px
-//       padding-bottom: 25px
-//
-//     .project-gallery
-//       padding-top: 25px
-//       padding-bottom: 25px
-
-//Projects Homepage ----------------------------------------------------------
-// section#latestwork
-//   position: relative
-//   display: inherit
-//   padding-top: 5rem
-//   background-color: #f4f4f4
-//   animation-delay: 1.5s
-//   text-align: left
-//
-//   +breakpoint(medium)
-//     .latest
-//       text-align: center
-//       padding-bottom: 0
-//       margin-bottom: 0
-//     h2
-//       margin-top: 20px
-//
-//   .container
-//     display: block
-//     background-color: $white
-//     padding-bottom: 20px
-//     box-shadow: 5px 5px 5px #afafaf
-//     min-height: rem-calc(350)
-//     max-height: rem-calc(350)
-//
-//   .singleproject
-//     margin-bottom: 1rem
-//     animation-delay: 2.5s
-//
-//     .thumbnail
-//       display: block
-//       margin: auto
-//       width: 100%
-//       max-height: auto
-//
-//     h3
-//       display: inline-block
-//       color: $black
-//       padding-left: 1rem
-//       padding-top: 1.5rem
-//
-//     img
-//       display: inline-block
-//       padding-left: .5rem
-//       border: none
-//
-//   +breakpoint(small-only)
-//     padding-top: 35px
-//     .container
-//       margin-top: 30px
 
 // Contact section------------------------------------------------
 section#contact-text
@@ -211,10 +103,6 @@ section#contact-text
   .contact-2
     color: $black
 
-    +breakpoint(small-only)
-      margin-bottom: rem-calc(25)
-  // .contact-3
-  //   color: #d34836
 
   +breakpoint(medium)
     padding-top: rem-calc(70)
@@ -241,9 +129,6 @@ section#contact-form
   +breakpoint(medium)
     padding: 50px
 
-  +breakpoint(small-only)
-    h3
-      margin-bottom: 20px
 
   form
 
@@ -255,10 +140,6 @@ section#contact-form
         font-size: 15px
         color: #646464
 
-      +breakpoint(small-only)
-        font-size: 12px
-        color: #646464
-
 // Footer ------------------------------------------------------------------
 section#page-footer
   padding: 20px
@@ -266,7 +147,7 @@ section#page-footer
   .pipe
     padding-left: 10px
     font-size: 20px
-    text-
+
   img
     padding-left: 10px
   a

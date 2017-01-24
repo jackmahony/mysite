@@ -1,0 +1,13 @@
+{
+  "name": "starter-theme",
+  "homepage": "https://github.com/timber/starter-theme",
+  "_release": "47b578c3fe",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "47b578c3fe9298a9cdf8f13f7e15a02dc125b756"
+  },
+  "_source": "https://github.com/timber/starter-theme.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/timber/starter-theme.git"
+}

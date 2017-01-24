@@ -1,39 +1,42 @@
 {% extends "base.twig" %}
 
+
 {% block content %}
-  %section#projects{style: "background: url('{{ TimberImage(page.ink_mark) }}') top center no-repeat;"}
+
+  %section#projects
     .row
-      .medium-3.columns
-        %pre {{dump(post.ink_mark)}}
-
-        {% if post.hero_image %}
-          %img{src:"{{TimberImage(post.hero_image).src|resize(600, 400)}}"}
-        {% endif %}
-
-      .medium-8.columns
+      .medium-12.columns
         {% if post.project_title %}
           %h2 {{post.project_title}}
         {% endif %}
 
-        {% if post.project_introduction %}
-          %p {{post.project_introduction}}
-        {% endif %}
-
     .row
-      .medium-12.columns
-        {% for section in post.get_field('project_content') %}
-          {% if section.acf_fc_layout == 'content' %}
-            %section.project-content
-              {{section.content_text}}
-          {% elseif section.acf_fc_layout == 'gallery' %}
-            %section.project-gallery
-              .row
-                .large-12.columns
-                  .row.small-up-1.medium-up-2
-                    {% for image in section.content_gallery %}
-                      .column
-                        %img{src: "{{ TimberImage(image)|resize(600, 400) }}"}
-                    {% endfor %}
+      .medium-10.columns
+        {% for item in post.get_field('block_content') %}
+          {% if item.acf_fc_layout == 'text_block' %}
+
+            {% if item.heading_two %}
+              %h2 {{item.heading_two}}
+            {% endif %}
+
+            {% if item.heading_three %}
+              %h3 {{item.heading_three}}
+            {% endif %}
+
+            {% if item.body_text %}
+              %p {{item.body_text}}
+            {% endif %}
+
+            %hr
+
+          {% elseif item.acf_fc_layout == 'gallery_block' %}
+
+            {% for image in item.gallery %}
+              {% if image %}
+                %img{src:"{{TimberImage(image)}}"}
+              {% endif %}
+            {% endfor %}
+
           {% endif %}
         {% endfor %}
 {% endblock %}
