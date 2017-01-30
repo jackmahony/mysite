@@ -4,7 +4,7 @@
 
 -# About Page -------------------------------------------------------
 {% if post.about_title %}
-  %section#aboutme.fadeInUp.animated
+  %section#aboutme
     .row{data-equalizer: "about"}
       .large-5.columns{data-equalizer-watch: "about"}
         .medium-middle
@@ -21,22 +21,22 @@
             {% endfor %}
 
   -# Technical skills section--------------------------------------------
-  %section#aboutskills.fadeInUp.animated
+  %section#aboutskills
     .row
       .medium-12.columns
         %h2 Technical Skills
     .row
       .medium-3.columns
-        %img.hvr-grow{src: "{{site.theme.link}}/assets/img/50p.svg"}
+        %img{src: "{{site.theme.link}}/assets/img/50p.svg"}
         %h3 HTML/CSS
       .medium-3.columns
-        %img.hvr-grow{src: "{{site.theme.link}}/assets/img/40p.svg"}
+        %img{src: "{{site.theme.link}}/assets/img/40p.svg"}
         %h3 WordPress
       .medium-3.columns
-        %img.hvr-grow{src: "{{site.theme.link}}/assets/img/60p.svg"}
+        %img{src: "{{site.theme.link}}/assets/img/60p.svg"}
         %h3 Adobe PS/AI
       .medium-3.columns
-        %img.hvr-grow{src: "{{site.theme.link}}/assets/img/50p.svg"}
+        %img{src: "{{site.theme.link}}/assets/img/50p.svg"}
         %h3 SolidWorks
 
 {% endif %}

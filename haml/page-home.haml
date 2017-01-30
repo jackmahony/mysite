@@ -1,13 +1,12 @@
 {% extends "base.twig" %}
 {% block content %}
-
   -# Portait Section ------------------------------------------------------
-  %section#portrait.fadeInUp.animated{style: "background: url('{{ TimberImage(post.header_banner) }}')  no-repeat;"}
+  %section#portrait{style: "background: url('{{ TimberImage(post.header_banner) }}')  no-repeat;"}
     .row
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210.97 264.49"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="21.12 230.81 0 230.81 0 0 96.8 117.49 179.77 22.55 195.67 36.45 96.33 150.13 21.12 58.84 21.12 230.81"/><polygon class="cls-1" points="118.54 264.49 103.25 249.92 189.85 159.11 189.85 104.4 120.81 182.78 104.97 168.82 210.97 48.48 210.97 167.57 118.54 264.49"/></g></g></svg>
     .row
       {% if post.tagline %}
-        %h1 {{post.tagline}}
+        %h2 {{post.tagline}}
       {% endif %}
   %section#services
     .row.medium-up-2
@@ -15,27 +14,35 @@
           {% for item in post.get_field('my_services') %}
             .column
               %img{src:"{{TimberImage(item.icon)}}"}
-              %h2 {{item.service_title}}
+              %h3 {{item.service_title}}
               %p {{item.about_services}}
-
-
           {% endfor %}
 
 
--# Project thumbnails -----(HIDDEN)------------------------------------------------------
-{% if post.show_projects %}
-  %section#latestwork.bounceInUp.animated
-    .row
-      %h2.latest
-        Some Of My Latest Work
+-# Project thumbnails ---------------------------
+%section#latestwork
+  .row
+    .medium-12.columns
+      {% if post.projects_title %}
+        %h2 {{post.projects_title}}
+      {% endif %}
 
+  {% if post.show_projects %}
 
-    .row.medium-up-3{data-equalizer: "projects"}
-      {% for project in projects %}
+      .row.medium-up-3{data-equalizer: "projects"}
+        {% for project in projects %}
+          .column{data-equalizer-watch: "projects"}
+            .medium-middle
+              %a{href: "{{project.link}}"}
+                .singleproject{style: "background: url('{{ TimberImage(project.header_banner)}}') center,center;"}
+                  .figcaption
+                    {% if project.project_title %}
+                      %h4 {{project.project_title}}
+                      %span.info View project &#10509;
+                    {% endif %}
 
-        .column.singleproject.bounceInUp.animated{data-equalizer-watch: "projects"}
+        {% endfor %}
+  {% endif %}
 
-      {% endfor %}
-{% endif %}
 
 {% endblock %}

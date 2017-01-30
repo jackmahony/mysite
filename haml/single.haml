@@ -1,20 +1,18 @@
 {% extends "base.twig" %}
 
-
 {% block content %}
 
+  %section#portrait{style: "background: url('{{ TimberImage(post.header_banner) }}')  no-repeat;"}
+
+    {% if project.project_logo %}
+      %img{src:"{{TimberImage(image)|resize(50,50)}}"}
+    {% endif %}
+
   %section#projects
-    .row
-      .medium-12.columns
-        {% if post.project_title %}
-          %h2 {{post.project_title}}
-        {% endif %}
-
-    .row
-      .medium-10.columns
-        {% for item in post.get_field('block_content') %}
-          {% if item.acf_fc_layout == 'text_block' %}
-
+    {% for item in post.get_field('block_content') %}
+      {% if item.acf_fc_layout == 'text_block' %}
+        .row.medium-6.medium-centered.columns
+          .textblock
             {% if item.heading_two %}
               %h2 {{item.heading_two}}
             {% endif %}
@@ -27,16 +25,22 @@
               %p {{item.body_text}}
             {% endif %}
 
-            %hr
-
-          {% elseif item.acf_fc_layout == 'gallery_block' %}
-
+      {% elseif item.acf_fc_layout == 'gallery_block' %}
+        .row
+          .galleryblock
             {% for image in item.gallery %}
               {% if image %}
-                %img{src:"{{TimberImage(image)}}"}
+                %img{src:"{{TimberImage(image)|resize(50,50)}}"}
               {% endif %}
             {% endfor %}
-
-          {% endif %}
-        {% endfor %}
+      {% elseif item.acf_fc_layout == 'button' %}
+        .row
+          .medium-12.columns
+            {% if item.website_link %}
+              %a{href: "{{item.website_link}}"}
+                .button.radius
+                  %span Click to view site
+            {% endif %}
+              {% endif %}
+    {% endfor %}
 {% endblock %}
