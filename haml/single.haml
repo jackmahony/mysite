@@ -17,28 +17,26 @@
               %h2 {{item.heading_two}}
             {% endif %}
 
-            {% if item.heading_three %}
-              %h3 {{item.heading_three}}
-            {% endif %}
-
             {% if item.body_text %}
               %p {{item.body_text}}
             {% endif %}
 
       {% elseif item.acf_fc_layout == 'gallery_block' %}
-        .row
-          .galleryblock
+        .galleryblock
+          .row.medium-up-2
             {% for image in item.gallery %}
-              {% if image %}
-                %img{src:"{{TimberImage(image)|resize(50,50)}}"}
-              {% endif %}
+              .column
+                {% if image %}
+                  %img{src:"{{TimberImage(image)}}"}
+                  %h4 {{image.caption}}
+                {% endif %}
             {% endfor %}
       {% elseif item.acf_fc_layout == 'button' %}
         .row
           .medium-12.columns
             {% if item.website_link %}
               %a{href: "{{item.website_link}}"}
-                .button.radius
+                .button.medium
                   %span Click to view site
             {% endif %}
               {% endif %}

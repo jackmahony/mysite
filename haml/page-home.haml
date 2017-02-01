@@ -8,20 +8,23 @@
       {% if post.tagline %}
         %h2 {{post.tagline}}
       {% endif %}
+
   %section#services
     .row.medium-up-2
-
-          {% for item in post.get_field('my_services') %}
-            .column
-              %img{src:"{{TimberImage(item.icon)}}"}
-              %h3 {{item.service_title}}
-              %p {{item.about_services}}
-          {% endfor %}
-
+        {% for item in post.get_field('my_services') %}
+          .column
+            %img{src:"{{TimberImage(item.icon)}}"}
+            %h3 {{item.service_title}}
+            %p {{item.about_services}}
+        {% endfor %}
 
 -# Project thumbnails ---------------------------
 %section#latestwork
   .row
+    .medium-12.columns
+      {% if post.work_header %}
+        %h2 {{post.work_header}}
+      {% endif %}
     .medium-12.columns
       {% if post.projects_title %}
         %h2 {{post.projects_title}}
@@ -31,18 +34,34 @@
 
       .row.medium-up-3{data-equalizer: "projects"}
         {% for project in projects %}
-          .column{data-equalizer-watch: "projects"}
-            .medium-middle
-              %a{href: "{{project.link}}"}
-                .singleproject{style: "background: url('{{ TimberImage(project.header_banner)}}') center,center;"}
-                  .figcaption
-                    {% if project.project_title %}
-                      %h4 {{project.project_title}}
-                      %span.info View project &#10509;
-                    {% endif %}
-
+          %a.column{href: "{{project.link}}"}
+            .singleproject{style: "background: url('{{ TimberImage(project.header_banner)|resize(400,500)}}') no-repeat;"}
+              .figcaption.small-middle
+                {% if project.project_title %}
+                  %h4 {{project.project_title}}
+                  %span.info View project &#10509;
+                {% endif %}
         {% endfor %}
   {% endif %}
+{% endblock %}
 
+{% block scripts %}
+  %scripts
+
+    %script
+    :javascript
+      var item = document.getElementById("singleproject");
+        item.addEventListener("mouseover", func, false);
+        item.addEventListener("mouseout", func1, false);
+
+        function func()
+        {
+         document.getElementById("figcaption").setAttribute("style", "opacity:1;")
+         }
+
+         function func1()
+         {
+          document.getElementById("figcaption").setAttribute("style", "opacity:0;")
+        }
 
 {% endblock %}

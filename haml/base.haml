@@ -32,7 +32,6 @@
     -# CSS
     %link{href: "{{theme.link}}/assets/stylesheets/core.css", media: "screen", rel: "stylesheet", type: "text/css"}
     %link{href: "{{theme.link}}/bower_components/animate.css", media: "screen", rel: "stylesheet", type: "text/css"}
-    %link{href: "{{theme.link}}/bower_components/hover-master/css/hover.css", media: "screen", rel: "stylesheet", type: "text/css"}
 
 
   %body{class: "{{body_class}}", data-template: "base.twig"}
@@ -67,9 +66,11 @@
       -# Scripts
       %scripts
         -# Foundation
-        %script{src: "{{theme.link}}/bower_components/foundation-sites/dist/foundation.min.js"}
+        %script{src: "{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"}
         :javascript
           $(document).foundation();
+
+          jQuery('p:empty').remove(); 
 
         -# Wowjs
         %script{src: "{{theme.link}}/bower_components/wow/dist/wow.min.js"}

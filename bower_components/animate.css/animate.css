@@ -3338,9 +3338,3 @@
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
-
-.LinkedIn	svg
-  path:hover{
-      fill:red;
-      stroke:blue;
-  }

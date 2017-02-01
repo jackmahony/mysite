@@ -5,12 +5,15 @@
   "dependencies": {
     "foundation-sites": ">=6.1"
   },
+  "devDependencies": {
+    "motion-ui": "^1.2.2"
+  },
   "homepage": "https://github.com/JeremyEnglert/JointsWP",
-  "_release": "f08bff34fc",
+  "_release": "fa2a7b05a1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f08bff34fc554a4c9677494bf122d2a8cec9543e"
+    "commit": "fa2a7b05a11af027a88b509da68dfdad170d763d"
   },
   "_source": "https://github.com/JeremyEnglert/JointsWP.git",
   "_target": "*",
