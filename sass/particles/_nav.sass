@@ -1,12 +1,41 @@
-nav#topnav
+section#page-header
   position: relative
-  top: 0
-  width: 100%
+  padding-top: rem-calc(10)
+  padding-bottom: rem-calc(20)
+  margin-top: 0
+  height: 100%
+
+nav#topnav
+  z-index: 99
+  position: relative
   text-align: center
   padding-top: 0
+  padding-bottom: 350px
+  background-size: cover !important
+  height: 100vh
 
-  .social
-    display: none
+
+  .homenav
+    z-index: 1
+    background-color: ($black, 50%)
+    padding-bottom: 1rem
+
+  .homeimg
+    height: 100vh
+
+
+  svg
+    max-width: 120px
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+  h2
+    display: block
+    text-align: center
+    color: $white
+    margin-top: 1rem
+    font-size: 32px
 
   .logo-jm
     display: inline-block
@@ -54,17 +83,3 @@ nav#topnav
 
     .logo-jm
       display: inline-block
-
-    .social
-      display: inline-block
-      margin-top: rem-calc(10)
-
-
-      .linkedin
-        display: inline-block
-        padding-right: rem-calc(20)
-        text-align: left
-
-      .github
-        display: inline-block
-        text-align: left
