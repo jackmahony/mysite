@@ -6,7 +6,7 @@
   font-weight: 300
 
 p
-  font-size: rem-calc(16)
+  font-size: rem-calc(18)
   margin-bottom: 3.5rem
 
   +breakpoint(medium)
@@ -18,8 +18,17 @@ h1, h2, h3
   line-height: 1.2em
 
 h2
-  margin-bottom: 0.5rem
+  margin-bottom: 0.8rem
   margin-top: 3.5rem
 
-  &.no-margin
-    margin-bottom: 0px
+  +breakpoint(medium)
+    margin-bottom: 0.5rem
+
+  &.mark
+    position: relative
+    display: block
+
+    &::after
+      content: url('../assets/img/h2-mark.svg')
+      position: relative
+      display: block
