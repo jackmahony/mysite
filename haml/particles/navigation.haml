@@ -15,27 +15,3 @@
     {% if post.tagline %}
       %h2 {{post.tagline}}
     {% endif %}
-
-
-
--# %nav#topnav
--#   .row{data-equalizer: "topnav"}
--#     {% if post.id != 'post.home' %}
--#       -# .small-6.medium-6.columns{data-equalizer-watch: "topnav"}
--#       -#   .logo
--#       -#     %a{href: "{{site.url}}"}
--#       -#       %img{src: "{{site.theme.link}}/assets/img/logo-jm2.svg"}
--#
--#       .medium-12.columns{data-equalizer-watch: "topnav"}
--#         %ul.menu
--#           {% for item in topnav.get_items %}
--#             %li{class: "{{item.classes | join(' ')}}"}
--#               %a{href: "{{item.link}}"}
--#                 {{item.title}}
--#           {% endfor %}
--#     {% elseif post.id == 'post.contact'  %}
--#
--#       sdfsdf
--#     {% endif %}
-
--# %pre {{dump(post)}}

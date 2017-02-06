@@ -10,23 +10,8 @@ body
   h3
     color: $black
 
-
-  // Portrait Section -------------------------------------------------------
-// section#portrait
-//   background-size: cover !important
-//   height: cover !important
-//
-//   svg
-//     max-width: 150px
-//     display: block
-//     margin-top: 6rem
-//     margin-left: auto
-//     margin-right: auto
-//
-//   h2
-//     display: block
-//     text-align: center
-//     color: $white
+.bounceIn
+  animation-delay: 0.8s
 
 // Services Section
 section#services
@@ -84,7 +69,6 @@ section#latestwork
     border-radius: 6px
     box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
 
-
     +breakpoint(medium)
       height: rem-calc(300)
       border-radius: 3px
@@ -97,12 +81,27 @@ section#latestwork
     text-align: center
     position: relative
     opacity: 1
+    height: 100%
 
-    h4
+    .projectinfo
+      margin-left: rem-calc(10)
+      margin-right: rem-calc(10)
+
+      &:hover
+
+    h3
       color: $white
 
     span
       color: darken(#fff, 25%)
+
+    +breakpoint(medium)
+      opacity: 0
+
+      &:hover
+        opacity: 1
+        -webkit-transition: 1s ease-in
+        -webkit-transition: 1s ease-out
 
 // Singe Projects
 section#projects
@@ -182,7 +181,6 @@ section#aboutme
   h2
     margin-top: rem-calc(30)
 
-
   +breakpoint(medium)
     padding-top: rem-calc(50)
     padding-bottom: rem-calc(70)
@@ -221,9 +219,6 @@ section#contact-text
   position: relative
   z-index: 1
   display: block
-
-  img
-    // margin-bottom: rem-calc(30)
 
   span
     margin-left: rem-calc(10)

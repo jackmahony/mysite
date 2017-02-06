@@ -32,6 +32,7 @@
     -# CSS
     %link{href: "{{theme.link}}/assets/stylesheets/core.css", media: "screen", rel: "stylesheet", type: "text/css"}
     %link{href: "{{theme.link}}/bower_components/animate.css", media: "screen", rel: "stylesheet", type: "text/css"}
+    %link{href: "{{theme.link}}/bower_components/hover/css/hover-min.css", media: "screen", rel: "stylesheet", type: "text/css"}
 
 
   %body{class: "{{body_class}}", data-template: "base.twig"}
@@ -54,13 +55,19 @@
         %section#page-footer
           %nav#footernav
             .row
-              .medium12.columns
+              .medium-6.columns.text-right
+                %a{href: "{{site.url}}"}
+                  %img{src: "{{theme.link}}/assets/img/logo-jm1.svg"}
                 %span
                   %a{href: "{{site.url}}"}
                     © Jack Mahony {{post|date('Y')}}
-                %span.pipe |
-                %a{href: "{{site.url}}"}
-                  %img{src: "{{theme.link}}/assets/img/logo-jm1.svg"}
+
+              .medium-6.columns.text-left
+                %span.pipe
+                  %a{href: "https://au.linkedin.com/in/jack-mahony-2aa9ba66", target:"_blank"}
+                    %img{src: "{{theme.link}}/assets/img/linkedin-logo.svg"}
+                  %a{href: "https://github.com/jackmahony", target:"_blank"}
+                    %img{src: "{{theme.link}}/assets/img/github-icon.svg"}
     {% endblock %}
 
       -# Scripts
@@ -76,7 +83,6 @@
         %script{src: "{{theme.link}}/bower_components/wow/dist/wow.min.js"}
         :javascript
           new WOW().init();
-
 
         {% block script %}
 

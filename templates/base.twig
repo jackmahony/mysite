@@ -1,23 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html><head><meta charset="{{site.charset}}" /><title>{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title><meta content="{{ site.name }}" name="description" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="pingback" />{{function('wp_head')}}{% block head %}{% endblock %}<link href="{{theme.link}}/assets/stylesheets/core.css" media="screen" rel="stylesheet" type="text/css" /><link href="{{theme.link}}/bower_components/animate.css" media="screen" rel="stylesheet" type="text/css" /></head><body class="{{body_class}}" data-template="base.twig"><section class="fadeInDown animated" id="page-header">{% include 'particles/navigation.twig' %}</section>{% block content %}  sorry no content{% endblock %}{% block footer %}<section id="page-footer"><nav id="footernav"><div class="row"><div class="medium12 columns"><span><a href="{{site.url}}">© Jack Mahony {{post|date('Y')}}</a></span><span class="pipe">|</span><a href="{{site.url}}"><img src="{{theme.link}}/assets/img/logo-jm1.svg" /></a></div></div></nav></section>{% endblock %}<scripts><script src="{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
+<html><head><meta charset="{{site.charset}}" /><title>{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title><meta content="{{ site.name }}" name="description" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="pingback" />{{function('wp_head')}}{% block head %}{% endblock %}<link href="{{theme.link}}/assets/stylesheets/core.css" media="screen" rel="stylesheet" type="text/css" /><link href="{{theme.link}}/bower_components/animate.css" media="screen" rel="stylesheet" type="text/css" /><link href="{{theme.link}}/bower_components/hover/css/hover-min.css" media="screen" rel="stylesheet" type="text/css" /></head><body class="{{body_class}}" data-template="base.twig"><section class="fadeInDown animated" id="page-header">{% include 'particles/navigation.twig' %}</section>{% block content %}  sorry no content{% endblock %}{% block footer %}<section id="page-footer"><nav id="footernav"><div class="row"><div class="medium-6 columns text-right"><a href="{{site.url}}"><img src="{{theme.link}}/assets/img/logo-jm1.svg" /></a><span><a href="{{site.url}}">© Jack Mahony {{post|date('Y')}}</a></span></div><div class="medium-6 columns text-left"><span class="pipe"><a href="https://au.linkedin.com/in/jack-mahony-2aa9ba66" target="_blank"><img src="{{theme.link}}/assets/img/linkedin-logo.svg" /></a><a href="https://github.com/jackmahony" target="_blank"><img src="{{theme.link}}/assets/img/github-icon.svg" /></a></span></div></div></nav></section>{% endblock %}<scripts><script src="{{theme.link}}/bower_components/foundation-sites/dist/js/foundation.min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
-
 $(document).foundation();
 
-
 jQuery('p:empty').remove();
-
 
 //]]>
 </script>
 <script src="{{theme.link}}/bower_components/wow/dist/wow.min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
-
 new WOW().init();
-
-
 
 //]]>
 </script>
