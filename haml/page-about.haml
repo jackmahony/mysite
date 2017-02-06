@@ -1,24 +1,36 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block header %}
 
+%nav#standardnav
+  .row{data-equalizer: "standardnav"}
+    .small-4.columns.medium-6.columns{data-equalizer-watch: "standardnav"}
+      %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
+      %span Designs
+
+    .small-8.columns.medium-6.columns{data-equalizer-watch: "standardnav"}
+      .standardnav
+        %ul.menu
+          {% for item in topnav.get_items %}
+            %li{class: "{{item.classes | join(' ')}}"}
+              %a{href: "{{item.link}}"}
+                {{item.title}}
+          {% endfor %}
+{% endblock %}
+
+{% block content %}
 -# About Page -------------------------------------------------------
 {% if post.about_title %}
   %section#aboutme
     .row{data-equalizer: "about"}
-      .large-5.columns{data-equalizer-watch: "about"}
-        .medium-middle
-          {% if post.about_image %}
-            %img{src: "{{TimberImage(post.about_image)}}"}
+      .medium-8.centered.columns{data-equalizer-watch: "about"}
+        .about-title
+          {% if post.about_title %}
+            %h2 {{post.about_title}}
           {% endif %}
-      .large-7.columns{data-equalizer-watch: "about"}
-          .about-title
-            {% if post.about_title %}
-              %h2 {{post.about_title}}
-            {% endif %}
-            {% for item in post.get_field('about_text') %}
-              %p {{item.text}}
-            {% endfor %}
+          {% for item in post.get_field('about_text') %}
+            %p {{item.text}}
+          {% endfor %}
 
   -# Technical skills section--------------------------------------------
   %section#aboutskills

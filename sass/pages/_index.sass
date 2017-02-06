@@ -1,3 +1,4 @@
+
 body
   margin-top: 0
   margin-bottom: 0
@@ -10,20 +11,20 @@ body
   h3
     color: $black
 
-.bounceIn
-  animation-delay: 0.8s
-
 // Services Section
 section#services
-  box-shadow: 5px 5px 2px #888888
   z-index: 1
   padding-top: 4rem
   padding-bottom: 1rem
   text-align: center
 
+  .bounceIn
+    animation-delay: 0.5s
+
   +breakpoint(medium)
     text-align: center
-    padding-bottom: 3rem
+    padding-bottom: 7rem
+    padding-top: 10rem
 
   img
     width: 150px
@@ -33,6 +34,23 @@ section#services
     margin-left: auto
     margin-right: auto
 
+// Endorsed Technlogy
+section#endorsed-tech
+  position: relative
+  margin: 0
+  padding-bottom: 10rem
+  padding-top: 10rem
+  background-color: #737d93
+  // box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+
+  .tech-icons
+    margin-top: 1.5rem
+
+    img
+      display: inline-block
+      min-width: 100%
+      height: auto
+      size: cover!important
 
 // Project Thumnails
 section#latestwork
@@ -41,8 +59,11 @@ section#latestwork
   background-color: #f4f4f4
   z-index: 3
 
+  .bounceIn
+    animation-delay: 0.75s
+
   +breakpoint(medium)
-    padding-bottom: 4rem
+    padding-bottom: 6.5rem
     padding-top: 2rem
 
   svg
@@ -72,8 +93,8 @@ section#latestwork
     +breakpoint(medium)
       height: rem-calc(300)
       border-radius: 3px
-      margin-bottom: 2.5rem
-      margin-top: 2.5rem
+      margin-bottom: 5rem
+      margin-top: 5rem
 
   .figcaption
     z-index: 99

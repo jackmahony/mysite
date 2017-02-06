@@ -1,13 +1,31 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block header %}
 
-  %section#portrait{style: "background: url('{{ TimberImage(post.header_banner) }}')  no-repeat;"}
+%nav#project-nav{style: "background: url('{{ TimberImage(post.header_banner) }}') no-repeat top;"}
+  .row
+    .small-3.columns.medium-6.columns
+      .nav-logo
+        %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
+      %span Designs
 
-    {% if project.project_logo %}
-      %img{src:"{{TimberImage(image)|resize(50,50)}}"}
+    .small-9.columns.medium-6.columns
+      .project-nav
+        %ul.menu
+          {% for item in topnav.get_items %}
+            %li{class: "{{item.classes | join(' ')}}"}
+              %a{href: "{{item.link}}"}
+                {{item.title}}
+          {% endfor %}
+  .row.small-middle
+    {% if post.project_logo %}
+      .proj-logo
+        %img{src:"{{TimberImage(post.project_logo)}}"}
     {% endif %}
 
+{% endblock %}
+
+{% block content %}
   %section#projects
     {% for item in post.get_field('block_content') %}
       {% if item.acf_fc_layout == 'text_block' %}

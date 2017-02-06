@@ -40,10 +40,11 @@
     -# Navigation Mobile
     -# {% include 'particles/navigation-mobile.twig' %}
 
-
+  {% block header %}
     -# Page Header
     %section#page-header.fadeInDown.animated
       {% include 'particles/navigation.twig' %}
+  {% endblock %}
 
       -# Page Content
     {% block content %}
@@ -55,15 +56,16 @@
         %section#page-footer
           %nav#footernav
             .row
-              .medium-6.columns.text-right
-                %a{href: "{{site.url}}"}
-                  %img{src: "{{theme.link}}/assets/img/logo-jm1.svg"}
-                %span
+              .small-12.columns.medium-6.columns
+                .text-footer
                   %a{href: "{{site.url}}"}
-                    © Jack Mahony {{post|date('Y')}}
+                    %img{src: "{{theme.link}}/assets/img/logo-jm1.svg"}
+                  %span
+                    %a{href: "{{site.url}}"}
+                      © Jack Mahony {{post|date('Y')}}
 
-              .medium-6.columns.text-left
-                %span.pipe
+              .small-12.columns.medium-6.columns
+                .social-footer
                   %a{href: "https://au.linkedin.com/in/jack-mahony-2aa9ba66", target:"_blank"}
                     %img{src: "{{theme.link}}/assets/img/linkedin-logo.svg"}
                   %a{href: "https://github.com/jackmahony", target:"_blank"}

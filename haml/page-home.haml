@@ -3,13 +3,22 @@
 
   -# Services Section------------------------------------------------------
   %section#services
-    .row.medium-up-2.fadeInUp.animated
-        {% for item in post.get_field('my_services') %}
-          .column
-            %img{src:"{{TimberImage(item.icon)}}"}
-            %h3 {{item.service_title}}
-            %p {{item.about_services}}
-        {% endfor %}
+    .row.medium-up-2
+      {% for item in post.get_field('my_services') %}
+        .column
+          %img.wow.bounceIn{src:"{{TimberImage(item.icon)}}"}
+          %h3 {{item.service_title}}
+          %p {{item.about_services}}
+      {% endfor %}
+
+  -# Endoresed Technology
+  %section#endorsed-tech
+    .row.medium-up-4
+      {% for images in post.get_field('endorsed_tech') %}
+        .column.wow.slideInLeft
+          .tech-icons
+            %img.tech{src:"{{ TimberImage(images)|resize(270,270)}}"}
+      {% endfor %}
 
   -# Project thumbnails ---------------------------
   %section#latestwork
@@ -25,7 +34,7 @@
 
     {% if post.show_projects %}
 
-        .row.medium-up-3.fadeInUp.animated{data-equalizer: "projects"}
+        .row.medium-up-3{data-equalizer: "projects"}
           {% for project in projects %}
             %a.column.wow.bounceIn{href: "{{project.link}}"}
               .singleproject{style: "background: url('{{ TimberImage(project.header_banner)|resize(400,500)}}') no-repeat;"}
@@ -41,7 +50,6 @@
           .medium-centered.medium-8.columns
             .h2line
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg>
-
 
 {% endblock %}
 

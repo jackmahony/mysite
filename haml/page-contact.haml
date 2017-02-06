@@ -1,8 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
--# %pre {{dump(post)}}
-
 -# Contact Page ---------------------------------------------------------
 {% if post.contact_title %}
   %section#contact-text
@@ -20,10 +18,6 @@
             %span
               Follow me on dribble
               %br
-        -# %a{href: "mailto:jackmahonyy@gmail.com"}
-        -#   %img.hvr-grow{src: "{{site.theme.link}}/assets/img/gmail.svg"}
-        -#   %span.contact-3
-        -#     Send me an email
 
       .medium-7.medium-1-offset.columns{data-equalizer-watch: "contact"}
         .medium-middle

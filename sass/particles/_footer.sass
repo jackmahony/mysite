@@ -10,16 +10,25 @@ section#page-footer
     top: 0
     width: 100%
     text-align: center
-    // padding-top: rem-calc(20)
-    span
-      color: $white
+    display: block
 
-    ul.menu
-      display: inline-block
+    .text-footer .social-footer
+      display: block
+      margin-left: auto
+      margin-right: auto
 
-      a
+    +breakpoint(medium)
+      .text-footer
+        text-align: right
+
+      .social-footer
+        text-align: left
+
+
+      span
         color: $white
-        position: relative
-        margin: 0
-  .img
-    display: inline-block
+
+        a
+          color: $white
+          position: relative
+          margin: 0
