@@ -2,27 +2,15 @@
 
 {% block header %}
 
-%nav#project-nav{style: "background: url('{{ TimberImage(post.header_banner) }}') no-repeat top;"}
-  .row
-    .small-3.columns.medium-6.columns
-      .nav-logo
-        %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
-      %span Designs
-
-    .small-9.columns.medium-6.columns
-      .project-nav
-        %ul.menu
-          {% for item in topnav.get_items %}
-            %li{class: "{{item.classes | join(' ')}}"}
-              %a{href: "{{item.link}}"}
-                {{item.title}}
-          {% endfor %}
-  .row.small-middle
-    {% if post.project_logo %}
-      .proj-logo
-        %img{src:"{{TimberImage(post.project_logo)}}"}
-    {% endif %}
-
+%nav#projnav{style: "background: url('{{ TimberImage(post.header_banner) }}') no-repeat top;"}
+  .row.expanded.columns
+    .homenav
+      %ul.menu
+        {% for item in topnav.get_items %}
+          %li{class: "{{item.classes | join(' ')}}"}
+            %a{href: "{{item.link}}"}
+              {{item.title}}
+        {% endfor %}
 {% endblock %}
 
 {% block content %}

@@ -1,15 +1,25 @@
 {% extends "base.twig" %}{% block content %}{% endblock %}{% block script %}<script src="{{site.theme.link}}/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>  {% for project in projects %}
 <script type="text/javascript">
 //<![CDATA[
+
 $(document).ready(function() {
+
   $(".{{project.post_title|sanitize}}").owlCarousel({
+
     animateOut: 'fadeOut',
+
     lazyload: true,
+
     loop: true,
+
     items: 1,
+
     lazyLoad: true
+
   });
+
 });
+
 //]]>
 </script>
   {% endfor %}{% endblock %}

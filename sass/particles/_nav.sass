@@ -139,8 +139,8 @@ nav#standardnav
         bottom: 1px
         opacity: 1
 
-nav#project-nav
-  z-index: 1
+nav#projnav
+  z-index: 99
   position: relative
   text-align: center
   padding-top: 0
@@ -148,38 +148,36 @@ nav#project-nav
   height: 70vh
   margin: 0
   padding: 0
-  background-color: rgba(black, 0.2)
 
   .small-middle
     top: 20%
 
-  .nav-logo
-    position: relative
+  .homenav
+    z-index: 1
+    background: rgba(black, 0.2)
+    padding-bottom: 1.5rem
+    padding-top: 1rem
 
-    img
-      max-width: 40px
-      height: auto
-      display: block
-      margin-left: auto
-      margin-right: auto
+  svg
+    max-width: 120px
+    display: block
+    margin-left: auto
+    margin-right: auto
+    color: $white
 
-      +breakpoint(medium)
-        display: inline-block
-        width: 50px
-        margin-left: 70%
+  h2
+    display: block
+    text-align: center
+    color: $white
+    margin-top: 1rem
+    font-size: 32px
 
-    img
-      width: 150px
-      height: auto
+  .logo-jm
+    display: inline-block
 
   ul.menu
-    text-align: left
-
-    +breakpoint(medium)
-      display: inline-block
-      margin-top: rem-calc(10)
-      margin-left: 20%
-      margin-right: auto
+    display: inline-block
+    margin-top: rem-calc(10)
 
     a
       color: $white
