@@ -1,40 +1,46 @@
 {% extends "base.twig" %}
 
+{% block header %}
+
+  %nav#standardnav.fadeInDown.animated
+    .row{data-equalizer: "standardnav"}
+      .small-3.medium-4.columns{data-equalizer-watch: "standardnav"}
+        %a{href: "{{site.home}}"}
+          %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
+        %span
+          DESIGNS
+      .small-9.medium-8.columns{data-equalizer-watch: "standardnav"}
+        %ul.menu
+          {% for item in topnav.get_items %}
+            %li{class: "{{item.classes | join(' ')}}"}
+              %a{href: "{{item.link}}"}
+                {{item.title}}
+          {% endfor %}
+{% endblock %}
+
 {% block content %}
 -# Contact Page ---------------------------------------------------------
 {% if post.contact_title %}
-  %section#contact-text
-    .row{data-equalizer: "contact"}
-      .medium-4.columns{data-equalizer-watch: "contact"}
-        %a{href: "https://au.linkedin.com/in/jack-mahony-2aa9ba66", target:"_blank"}
-          .contact-1
-            %img{src: "{{site.theme.link}}/assets/img/linkedin-blue.svg"}
-            %span
-              Connect with me on LinkedIn
-              %br
-        %a{href: "https://dribbble.com/", target:"_blank"}
-          .contact-2
-            %img{src: "{{site.theme.link}}/assets/img/dribble-logo-black.svg"}
-            %span
-              Follow me on dribble
-              %br
-
-      .medium-7.medium-1-offset.columns{data-equalizer-watch: "contact"}
-        .medium-middle
-          {% if post.contact_title %}
-            %h3 {{post.contact_title}}
-          {% endif %}
-          {% if post.contact_text %}
-            %p {{post.contact_text}}
-          {% endif %}
+  %section#contact-text.fadeInUp.animated
+    .row.medium-8.centered.columns
+      {% if post.contact_title %}
+        %h2 {{post.contact_title}}
+      {% endif %}
+      {% if post.contact_text %}
+        %p {{post.contact_text}}
+      {% endif %}
 {% endif %}
 
 -# Form-----------------------------------------
 {% if post.slug == 'contact' %}
-  %section#contact-form
+  %section#contact-form.fadeInUp.animated
     .row
       .small-12.columnns
         %h3 Send me an email
+        .h2line
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg>
+
+
         {% filter shortcodes %}
           [contact-form-7 id="62" title="Contact Me"]
         {% endfilter %}

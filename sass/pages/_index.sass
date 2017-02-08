@@ -11,6 +11,9 @@ body
   h3
     color: $black
 
+.expanded
+  padding: 0
+
 // Services Section
 section#services
   z-index: 1
@@ -27,7 +30,7 @@ section#services
     padding-top: 10rem
 
   img
-    width: 150px
+    width: 170px
     height: auto
     margin-bottom: 2rem
     display: block
@@ -36,15 +39,29 @@ section#services
 
 // Endorsed Technlogy
 section#endorsed-tech
-  position: relative
-  margin: 0
-  padding-bottom: 10rem
-  padding-top: 10rem
-  background-color: #737d93
-  // box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
+  display: none
+
+  +breakpoint(medium)
+    display: block
+    position: relative
+    margin: 0
+    padding-bottom: 10rem
+    padding-top: 5rem
+    background-color: #737d93
+
+  svg
+    margin-bottom: 5rem
 
   .tech-icons
     margin-top: 1.5rem
+
+  h2
+    text-align: left
+    padding-bottom: 0.5rem
+    color: $white
+
+    +breakpoint(medium)
+      text-align: center
 
     img
       display: inline-block
@@ -64,7 +81,7 @@ section#latestwork
 
   +breakpoint(medium)
     padding-bottom: 6.5rem
-    padding-top: 2rem
+    padding-top: 6rem
 
   svg
     display: none
@@ -106,7 +123,7 @@ section#latestwork
 
     .projectinfo
       margin-left: rem-calc(10)
-      margin-right: rem-calc(10)  
+      margin-right: rem-calc(10)
 
     h3
       color: $white
@@ -145,15 +162,30 @@ section#projects
 
     h4
       color: $white
-      padding-bottom: 3.5rem
-      margin-left: 2rem
-      margin-right: 2rem
+      text-align: left
 
-  .text-block
-    margin-top: 4rem
+      +breakpoint(medium)
+        padding-bottom: 3.5rem
+        margin-left: 2rem
+        margin-right: 2rem
+        text-align: center
+
+  .textblock
+    margin-top: 3rem
+    margin-bottom: 3.5rem
 
     +breakpoint(medium)
       text-align: center
+      margin-top: 7rem
+      margin-bottom: 7rem
+
+    h2
+      margin-top: 0
+
+    p
+      margin-top: 0
+      margin-bottom: 0
+
 
   .button
     background-color: $white
@@ -164,14 +196,17 @@ section#projects
     box-shadow: 0 20px 30px 0 rgba(0,0,0,.1)
     padding-left: 0
     padding-right: 0
+    display: block
 
     +breakpoint(medium)
       box-shadow: none
+      margin-top: 6rem
+      margin-bottom: 2rem
+      display: inline-block
 
     span
       font-size: rem-calc(16)
       color: #737d93
-      text-align: center
       padding-top: 17px
       padding-bottom: 17px
       padding-left: 20px
@@ -192,26 +227,41 @@ section#projects
 // About Page ----------------------------------------------------------------
 section#aboutme
   z-index: 1
-  box-shadow: 0px 3px 2px #afafaf
-
-  .about-title
-    margin-left: rem-calc(30)
+  padding-top: rem-calc(30)
+  padding-bottom: rem-calc(30)
+  text-align: left
 
   h2
     margin-top: rem-calc(30)
 
   +breakpoint(medium)
-    padding-top: rem-calc(50)
-    padding-bottom: rem-calc(70)
+    text-align: center
+    padding-top: rem-calc(90)
+    padding-bottom: rem-calc(90)
 
 section#aboutskills
   background-color: #f4f4f4
-  padding-bottom: rem-calc(20)
-  padding-top: rem-calc(45)
-  animation-delay: 1s
+  padding-bottom: rem-calc(30)
+  padding-top: rem-calc(30)
 
   +breakpoint(medium)
-    padding-bottom: rem-calc(50)
+    padding-bottom: rem-calc(90)
+    padding-top: rem-calc(70)
+
+  .dials
+    padding-top: rem-calc(10)
+    padding-bottom: rem-calc(10)
+
+    +breakpoint(medium)
+      padding-top: rem-calc(40)
+      padding-bottom: rem-calc(40)
+      animation-delay: 1.2s
+
+  svg
+    display: none
+
+    +breakpoint(medium)
+      display: block
 
   img
     display: block
@@ -220,7 +270,7 @@ section#aboutskills
 
   h2
     text-align: center
-    margin-bottom: rem-calc(50)
+    padding-bottom: rem-calc(8)
 
   h3
     margin-top: rem-calc(20)
@@ -233,18 +283,16 @@ section#aboutskills
 // Contact section------------------------------------------------
 section#contact-text
   margin: 0 auto
-  box-shadow: 0px 3px 2px #afafaf
-  padding-bottom: rem-calc(40)
+  padding-bottom: rem-calc(15)
+  padding-top: rem-calc(30)
   position: relative
   z-index: 1
   display: block
+  text-align: left
 
-  span
-    margin-left: rem-calc(10)
-    font-size: rem-calc(18)
-  h3
-    margin-bottom: rem-calc(25)
-    margin-top: rem-calc(10)
+
+  h2
+    margin-top: rem-calc(30)
 
   .contact-1
     color: #0077B5
@@ -253,8 +301,9 @@ section#contact-text
     color: $black
 
   +breakpoint(medium)
-    padding-top: rem-calc(70)
-    padding-bottom: rem-calc(50)
+    padding-top: rem-calc(90)
+    padding-bottom: rem-calc(90)
+    text-align: center
 
     p
       display: inline-block
@@ -272,29 +321,27 @@ section#contact-text
 
 section#contact-form
   background-color: #f4f4f4
+  padding-top: rem-calc(50)
+  padding-bottom: rem-calc(50)
+  text-align: center
+
 
   +breakpoint(medium)
-    padding: 50px
+    padding-top: rem-calc(80)
+    padding-bottom: rem-calc(30)
+    text-align: left
 
-  form
+  .wpcf7-form
+    margin-top: 2rem
 
-    label
-      color: $black
-      margin-bottom: 1rem
-      font-size: rem-calc(20)
-      +breakpoint (medium)
-        font-size: 15px
-        color: #646464
+    +breakpoint(medium)
+      margin-top: 4rem
 
-// Footer ------------------------------------------------------------------
-section#page-footer
-  padding: 20px
+    p
+      margin-bottom: 0
 
-  .pipe
-    padding-left: 10px
-    font-size: 20px
-
-  img
-    padding-left: 10px
-  a
-    color: $white
+  .wpcf7-submit
+    background-color: $white
+    border: 1px solid
+    padding: 1rem
+    border-radius: 3px

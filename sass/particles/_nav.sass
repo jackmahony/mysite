@@ -8,6 +8,9 @@ nav#topnav
   margin: 0
   padding: 0
 
+  .zoomIn
+    animation-delay: 1s
+
   .small-middle
     top: 20%
 
@@ -17,12 +20,16 @@ nav#topnav
     padding-bottom: 1.5rem
     padding-top: 1rem
 
-  svg
-    max-width: 120px
+  img
+    max-width: 100px
     display: block
     margin-left: auto
     margin-right: auto
     color: $white
+
+    +breakpoint(medium)
+      max-width: 120px
+
 
   h2
     display: block
@@ -73,43 +80,49 @@ nav#topnav
 
 nav#standardnav
   z-index: 1
+  position: relative
   background-color:  $black
   padding-bottom: 1.5rem
-  padding-top: 1rem
+  padding-top: 1.5rem
+  text-align: center
 
   span
-    color: $white
     display: none
-    padding-left: 0.5rem
 
     +breakpoint(medium)
       display: inline-block
+      color: $white
+      text-align: center
+      padding-left: 1rem
 
   img
     max-width: 40px
     height: auto
     display: block
     margin-left: auto
-    margin-right: auto
-
+    margin-right: 0
+    
     +breakpoint(medium)
       display: inline-block
-      width: 50px
-      margin-left: 70%
+      min-width: 50px
+      height: auto
+      text-align: center
+
 
   ul.menu
-    text-align: left
+    display: block
+    margin-top: rem-calc(8)
 
     +breakpoint(medium)
       display: inline-block
-      margin-top: rem-calc(10)
-      margin-left: 20%
-      margin-right: auto
 
     a
       color: $white
       position: relative
       padding: rem-calc(10)
+
+      +breakpoint(medium)
+        padding: rem-calc(15)
 
       &:after
         content: ''
@@ -148,6 +161,19 @@ nav#projnav
   height: 70vh
   margin: 0
   padding: 0
+
+  .zoomIn
+    animation-delay: 1s
+
+  img
+    max-width: 80px
+    display: block
+    margin-left: auto
+    margin-right: auto
+    color: $white
+
+    +breakpoint(medium)
+      max-width: 100px
 
   .small-middle
     top: 20%

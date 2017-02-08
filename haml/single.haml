@@ -2,7 +2,7 @@
 
 {% block header %}
 
-%nav#projnav{style: "background: url('{{ TimberImage(post.header_banner) }}') no-repeat top;"}
+%nav#projnav.fadeInDown.animated{style: "background: url('{{ TimberImage(post.header_banner) }}') no-repeat top;"}
   .row.expanded.columns
     .homenav
       %ul.menu
@@ -11,14 +11,19 @@
             %a{href: "{{item.link}}"}
               {{item.title}}
         {% endfor %}
+
+  .row.small-middle.zoomIn.animated
+    %img{src:"{{TimberImage(post.project_logo)}}"}
+    %h2 {{post.project_title}}
+
 {% endblock %}
 
 {% block content %}
-  %section#projects
+  %section#projects.fadeInUp.animated
     {% for item in post.get_field('block_content') %}
       {% if item.acf_fc_layout == 'text_block' %}
-        .row.medium-6.medium-centered.columns
-          .textblock
+        .textblock
+          .row.medium-6.medium-centered.columns
             {% if item.heading_two %}
               %h2 {{item.heading_two}}
             {% endif %}
@@ -42,7 +47,7 @@
           .medium-12.columns
             {% if item.website_link %}
               %a{href: "{{item.website_link}}"}
-                .button.medium
+                .button
                   %span Click to view site
             {% endif %}
               {% endif %}

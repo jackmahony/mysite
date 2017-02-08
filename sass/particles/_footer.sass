@@ -12,31 +12,32 @@ section#page-footer
     text-align: center
     display: block
 
-    .text-footer .social-footer
+    .linkedin
+      display: none
+
+    .text-footer
+      margin-top: 1rem
       display: block
-      margin-left: auto
-      margin-right: auto
+      margin-left: 0
 
-    .social-footer
-      margin-bottom: 1rem
-      padding-top: 0.5rem
+      +breakpoint(medium)
+        display: inline-block
+        margin-left: 1rem
 
-      img
-        width: 50px
-        padding-left:rem-calc(20) 
-
-    +breakpoint(medium)
-      .text-footer
-        text-align: right
-
-      .social-footer
-        text-align: left
-
-
-      span
+      span,a
         color: $white
 
-        a
-          color: $white
-          position: relative
-          margin: 0
+    .social-footer
+      margin-bottom: 0.5rem
+      padding-top: 0.5rem
+      display: block
+
+      +breakpoint(medium)
+        display: inline-block
+
+      a
+        margin-left: 1rem
+
+        img
+          width: 50px
+          padding-left:rem-calc(20)

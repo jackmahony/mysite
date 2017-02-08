@@ -2,14 +2,14 @@
 
 {% block header %}
 
-%nav#standardnav
-  .row{data-equalizer: "standardnav"}
-    .small-4.columns.medium-6.columns{data-equalizer-watch: "standardnav"}
-      %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
-      %span Designs
-
-    .small-8.columns.medium-6.columns{data-equalizer-watch: "standardnav"}
-      .standardnav
+  %nav#standardnav.fadeInDown.animated
+    .row{data-equalizer: "standardnav"}
+      .small-3.medium-4.columns{data-equalizer-watch: "standardnav"}
+        %a{href: "{{site.home}}"}
+          %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
+        %span
+          DESIGNS
+      .small-9.medium-8.columns{data-equalizer-watch: "standardnav"}
         %ul.menu
           {% for item in topnav.get_items %}
             %li{class: "{{item.classes | join(' ')}}"}
@@ -21,36 +21,34 @@
 {% block content %}
 -# About Page -------------------------------------------------------
 {% if post.about_title %}
-  %section#aboutme
-    .row{data-equalizer: "about"}
-      .medium-8.centered.columns{data-equalizer-watch: "about"}
-        .about-title
-          {% if post.about_title %}
-            %h2 {{post.about_title}}
-          {% endif %}
-          {% for item in post.get_field('about_text') %}
-            %p {{item.text}}
-          {% endfor %}
+  %section#aboutme.fadeInUp.animated
+    .row.medium-8.centered.columns
+      .about-title
+        {% if post.about_title %}
+          %h2 {{post.about_title}}
+        {% endif %}
+        {% for item in post.get_field('about_text') %}
+          %p {{item.text}}
+        {% endfor %}
+{% endif %}
 
   -# Technical skills section--------------------------------------------
-  %section#aboutskills
+  %section#aboutskills.fadeInUp.animated
     .row
       .medium-12.columns
         %h2 Technical Skills
-    .row
-      .medium-3.columns
-        %img{src: "{{site.theme.link}}/assets/img/50p.svg"}
-        %h3 HTML/CSS
-      .medium-3.columns
-        %img{src: "{{site.theme.link}}/assets/img/40p.svg"}
-        %h3 WordPress
-      .medium-3.columns
-        %img{src: "{{site.theme.link}}/assets/img/60p.svg"}
-        %h3 Adobe PS/AI
-      .medium-3.columns
-        %img{src: "{{site.theme.link}}/assets/img/50p.svg"}
-        %h3 SolidWorks
 
-{% endif %}
+      .h2line
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg>
+    .row.medium-up-4
+      {% for item in post.get_field('dials') %}
+        .column
+          .dials.wow.fadeInLeft
+            %img{src:"{{TimberImage(item.image).src}}"}
+            %h3{{item.title}}
+      {% endfor %}
+
+      .h2line
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg>
 
 {% endblock %}
