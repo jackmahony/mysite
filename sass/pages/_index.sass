@@ -21,19 +21,13 @@ section#services
   padding-bottom: 1rem
   text-align: center
 
+  .bounceIn
+    animation-delay: 0.5s
+
   +breakpoint(medium)
     text-align: center
     padding-bottom: 7rem
     padding-top: 10rem
-
-  .bounceIn
-    animation-delay: 0.5s
-
-  .service-container
-    margin-bottom: 2rem
-
-    +breakpoint(medium)
-      margin-bottom: 0
 
   img
     width: 170px
@@ -82,16 +76,12 @@ section#latestwork
   background-color: #f4f4f4
   z-index: 3
 
+  .bounceIn
+    animation-delay: 0.75s
+
   +breakpoint(medium)
     padding-bottom: 6.5rem
     padding-top: 6rem
-
-  .bounceIn
-    animation-delay: 0.2s
-
-    +breakpoint(medium)
-      animation-delay: 0.75s
-
 
   svg
     display: none
@@ -101,8 +91,11 @@ section#latestwork
       display: block
 
   h2
-    text-align: center
+    text-align: left
     padding-bottom: 0.5rem
+
+    +breakpoint(medium)
+      text-align: center
 
   .singleproject
     z-index: 1
@@ -230,22 +223,20 @@ section#projects
       background-color: #737d93
       transition: 300ms
 
+
 // About Page ----------------------------------------------------------------
 section#aboutme
   z-index: 1
-  padding-top: rem-calc(20)
+  padding-top: rem-calc(30)
   padding-bottom: rem-calc(30)
   text-align: left
-
-  +breakpoint (medium)
-    padding-top: rem-calc(30)
 
   h2
     margin-top: rem-calc(30)
 
   +breakpoint(medium)
     text-align: center
-    padding-top: rem-calc(80)
+    padding-top: rem-calc(90)
     padding-bottom: rem-calc(90)
 
 section#aboutskills
@@ -262,8 +253,8 @@ section#aboutskills
     padding-bottom: rem-calc(10)
 
     +breakpoint(medium)
-      padding-top: rem-calc(70)
-      padding-bottom: rem-calc(70)
+      padding-top: rem-calc(40)
+      padding-bottom: rem-calc(40)
       animation-delay: 1.2s
 
   svg
@@ -292,15 +283,13 @@ section#aboutskills
 // Contact section------------------------------------------------
 section#contact-text
   margin: 0 auto
-  padding-bottom: rem-calc(30)
-  padding-top: rem-calc(20)
+  padding-bottom: rem-calc(15)
+  padding-top: rem-calc(30)
   position: relative
   z-index: 1
   display: block
   text-align: left
 
-  +breakpoint (medium)
-    padding-top: rem-calc(30)
 
   h2
     margin-top: rem-calc(30)
@@ -339,7 +328,7 @@ section#contact-form
 
   +breakpoint(medium)
     padding-top: rem-calc(80)
-    padding-bottom: rem-calc(70)
+    padding-bottom: rem-calc(30)
     text-align: left
 
   .wpcf7-form
