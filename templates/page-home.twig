@@ -1,19 +1,31 @@
-{% extends "base.twig" %}{% block content %}<section id="services"><div class="row medium-up-2">{% for item in post.get_field('my_services') %}<div class="column"><img src="{{TimberImage(item.icon)}}" class="wow bounceIn" /><h3>{{item.service_title}}</h3><p>{{item.about_services}}</p></div>{% endfor %}</div></section><section id="endorsed-tech"><div class="row medium-10 columns">{% if post.endorsed_tech_title %}<h2>{{post.endorsed_tech_title}}</h2>{% endif %}<div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div><div class="row medium-up-4">{% for images in post.get_field('endorsed_tech') %}<div class="column wow slideInLeft"><div class="tech-icons"><img src="{{ TimberImage(images)|resize(270,270)}}" class="tech" /></div></div>{% endfor %}</div></section><section id="latestwork"><div class="row"><div class="medium-12 columns">{% if post.work_header %}<h2>{{post.work_header}}</h2>{% endif %}</div><div class="medium-centered medium-8 columns"><div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div></div>{% if post.show_projects %}<div data-equalizer="projects" class="row medium-up-3">{% for project in projects %}<a href="{{project.link}}" class="column wow bounceIn"><div style="background: url('{{ TimberImage(project.header_banner)|resize(400,500)}}') no-repeat;" class="singleproject"><div class="figcaption"><div class="projectinfo small-middle">{% if project.project_title %}<h3>{{project.project_title}}</h3><span class="info hvr-grow">View project &#10509;</span>{% endif %}</div></div></div></a>{% endfor %}</div>{% endif %}<div class="row"><div class="medium-centered medium-8 columns"><div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div></div></section>{% endblock %}{% block scripts %}<scripts><script></script>
+{% extends "base.twig" %}{% block content %}<section id="services"><div class="row medium-up-2">{% for item in post.get_field('my_services') %}<div class="column"><div class="service-container"><img src="{{TimberImage(item.icon)}}" class="wow bounceIn" /><h3>{{item.service_title}}</h3><p>{{item.about_services}}</p></div></div>{% endfor %}</div></section><section id="endorsed-tech"><div class="row medium-10 columns">{% if post.endorsed_tech_title %}<h2>{{post.endorsed_tech_title}}</h2>{% endif %}<div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div><div class="row medium-up-4">{% for images in post.get_field('endorsed_tech') %}<div class="column wow slideInLeft"><div class="tech-icons"><img src="{{ TimberImage(images)|resize(270,270)}}" class="tech" /></div></div>{% endfor %}</div></section><section id="latestwork"><div class="row"><div class="medium-12 columns">{% if post.work_header %}<h2>{{post.work_header}}</h2>{% endif %}</div><div class="medium-centered medium-8 columns"><div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div></div>{% if post.show_projects %}<div data-equalizer="projects" class="row medium-up-3">{% for project in projects %}<a href="{{project.link}}" class="column wow bounceIn"><div style="background: url('{{ TimberImage(project.header_banner)|resize(400,500)}}') no-repeat;" class="singleproject"><div class="figcaption"><div class="projectinfo small-middle">{% if project.project_title %}<h3>{{project.project_title}}</h3><span class="info hvr-grow">View project &#10509;</span>{% endif %}</div></div></div></a>{% endfor %}</div>{% endif %}<div class="row"><div class="medium-centered medium-8 columns"><div class="h2line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 5"><defs><style>.cls-1{fill:#ead975;opacity:0.53;}</style></defs><title>line-h2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><rect class="cls-1" width="772" height="3" transform="translate(772 5) rotate(180)"/></g></g></svg></div></div></div></section>{% endblock %}{% block scripts %}<scripts><script></script>
 <script type="text/javascript">
 //<![CDATA[
+
 var item = document.getElementById("singleproject");
+
   item.addEventListener("mouseover", func, false);
+
   item.addEventListener("mouseout", func1, false);
 
+
   function func()
+
   {
+
    document.getElementById("figcaption").setAttribute("style", "opacity:1;")
+
    }
 
+
    function func1()
+
    {
+
     document.getElementById("figcaption").setAttribute("style", "opacity:0;")
+
   }
+
 
 //]]>
 </script>

@@ -6,9 +6,10 @@
     .row.medium-up-2
       {% for item in post.get_field('my_services') %}
         .column
-          %img.wow.bounceIn{src:"{{TimberImage(item.icon)}}"}
-          %h3 {{item.service_title}}
-          %p {{item.about_services}}
+          .service-container
+            %img.wow.bounceIn{src:"{{TimberImage(item.icon)}}"}
+            %h3 {{item.service_title}}
+            %p {{item.about_services}}
       {% endfor %}
 
   -# Endoresed Technology
