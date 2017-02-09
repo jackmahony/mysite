@@ -4,12 +4,12 @@
 
   %nav#standardnav.fadeInDown.animated
     .row{data-equalizer: "standardnav"}
-      .small-3.medium-4.columns{data-equalizer-watch: "standardnav"}
+      .small-3.medium-6.columns{data-equalizer-watch: "standardnav"}
         %a{href: "{{site.home}}"}
           %img{src:"{{site.theme.link}}/assets/img/jm-logo.svg"}
         %span
           DESIGNS
-      .small-9.medium-8.columns{data-equalizer-watch: "standardnav"}
+      .small-9.medium-6.columns{data-equalizer-watch: "standardnav"}
         %ul.menu
           {% for item in topnav.get_items %}
             %li{class: "{{item.classes | join(' ')}}"}
@@ -45,7 +45,7 @@
         .column
           .dials.wow.fadeInLeft
             %img{src:"{{TimberImage(item.image).src}}"}
-            %h3{{item.title}}
+            %h3 {{item.title}}
       {% endfor %}
 
       .h2line
